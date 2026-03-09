@@ -97,3 +97,9 @@ def update_profile(profile_data: ProfileUpdate, db: Session = Depends(get_db)):
     
     db.commit()
     return {"message": "Profile updated successfully"}
+
+from mangum import Mangum
+
+# ... your existing app = FastAPI() code ...
+
+handler = Mangum(app)
